@@ -1,0 +1,480 @@
+/* 
+ * ESTILO PREMIUM - DÍA DEL PADRE
+ * Diseñado con CSS Vanilla, animaciones fluidas, y diseño responsivo.
+ * Altamente personalizable mediante las variables CSS inyectadas desde config.json.
+ */
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Burbujas y elementos decorativos de fondo */
+.decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(255,255,255,0) 70%);
+    filter: blur(20px);
+    animation: float 25s infinite ease-in-out;
+}
+
+.bubble-1 {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.bubble-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(44, 62, 80, 0.08) 0%, rgba(255,255,255,0) 70%);
+    animation-delay: -5s;
+}
+
+.bubble-3 {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-40px) scale(1.1);
+    }
+}
+
+/* Contenedor Principal */
+.main-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* Encabezado */
+.header-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    animation: fadeInDown 1.2s ease-out;
+}
+
+.main-title {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 1.5rem auto;
+    border-radius: 2px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Secciones Comunes */
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    text-align: center;
+    color: #777;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+}
+
+/* Regalo Interactivo */
+.gift-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.gift-container {
+    perspective: 1000px;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    cursor: pointer;
+}
+
+.gift-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    animation: wobble 3s infinite ease-in-out;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+    animation: shake 0.5s infinite linear;
+}
+
+/* Cuerpo de la Caja */
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 160px;
+    background-color: var(--box-color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Tapa de la Caja */
+.gift-lid {
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    width: 220px;
+    height: 40px;
+    background-color: var(--lid-color);
+    border-radius: 5px;
+    z-index: 10;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
+    transform-origin: bottom right;
+}
+
+/* Cintas (Ribbon) */
+.ribbon-vertical, .ribbon-vertical-lid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 100%;
+    background-color: var(--ribbon-color);
+}
+
+.ribbon-horizontal, .ribbon-horizontal-lid {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 30px;
+    background-color: var(--ribbon-color);
+}
+
+/* Moño en la parte superior */
+.lid-top {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 25px;
+    z-index: 12;
+}
+
+.lid-top::before, .lid-top::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 6px solid var(--ribbon-color);
+    border-radius: 50% 50% 0 50%;
+    top: -5px;
+}
+
+.lid-top::before {
+    left: -5px;
+    transform: rotate(45deg);
+}
+
+.lid-top::after {
+    right: -5px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+}
+
+/* Animaciones del Regalo Abriéndose */
+.gift-box.opened {
+    animation: none;
+}
+
+.gift-box.opened .gift-lid {
+    transform: translate(80px, -150px) rotate(45deg) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gift-box.opened .gift-body {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s;
+    pointer-events: none;
+}
+
+/* Carta Sorpresa */
+.surprise-card {
+    max-width: 600px;
+    width: 100%;
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+    padding: 3rem 2rem;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.7);
+    display: none;
+    transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.surprise-card.show {
+    display: block;
+    animation: popIn 0.8s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.surprise-inner h3 {
+    font-family: var(--font-title);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.surprise-message {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.heart-icon {
+    font-size: 2.5rem;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+/* Galería de Recuerdos */
+.gallery-section {
+    padding: 2rem 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Polaroid Card */
+.polaroid-card {
+    background-color: #fff;
+    padding: 15px 15px 25px 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.polaroid-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.polaroid-card:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.polaroid-card:hover {
+    transform: translateY(-10px) rotate(0deg) scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.polaroid-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    border-radius: 2px;
+}
+
+.polaroid-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.polaroid-card:hover .polaroid-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.polaroid-caption {
+    text-align: center;
+    margin-top: 15px;
+    font-family: var(--font-title);
+    font-size: 1.05rem;
+    color: #444;
+    font-style: italic;
+}
+
+/* Footer */
+.footer-section {
+    text-align: center;
+    padding: 2rem;
+    color: #888;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Canvas para Confeti */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+        display: none;
+    }
+    1% {
+        display: block;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        display: block;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    80% { transform: rotate(0deg); }
+    85% { transform: rotate(3deg); }
+    90% { transform: rotate(-3deg); }
+    95% { transform: rotate(2deg); }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -1px) rotate(-1deg); }
+    20% { transform: translate(-2px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    55% { transform: translate(-1px, 1px) rotate(-1deg); }
+    70% { transform: translate(-2px, -1px) rotate(0deg); }
+    85% { transform: translate(2px, 1px) rotate(1deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    .main-container {
+        padding: 2rem 1rem;
+        gap: 3rem;
+    }
+    .gift-container {
+        width: 160px;
+        height: 160px;
+    }
+    .gift-body {
+        height: 125px;
+    }
+    .gift-lid {
+        width: 180px;
+        height: 35px;
+    }
+}

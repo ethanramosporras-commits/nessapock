@@ -1,0 +1,32 @@
+{
+  "theme": {
+    "background_color": "#FAF6F0",
+    "primary_color": "#D4AF37",
+    "secondary_color": "#2C3E50",
+    "text_color": "#333333",
+    "card_background": "rgba(255, 255, 255, 0.9)",
+    "font_title": "'Playfair Display', serif",
+    "font_body": "'Montserrat', sans-serif"
+  },
+  "header": {
+    "title": "¡Feliz Día del Padre, Papá!",
+    "subtitle": "Un homenaje especial de parte de tu hijo.",
+    "intro": "Querido Papá, en este día tan especial quiero recordarte lo mucho que significas para mi. Gracias por tu sabiduría, tu guía constante y tu amor infinito gracias por todo lo que has hecho por mi y por enseñarme todo lo que se."
+  },
+  "gift": {
+    "box_color": "#C0392B",
+    "lid_color": "#A93226",
+    "ribbon_color": "#F1C40F",
+    "message": "¡Eres el mejor Papá del mundo entero!  Gracias por cada consejo, por tu paciencia infinita y por enseñarme todo lo que se. Que este día esté lleno de la misma felicidad que me das todos los días. ¡Te amo!"
+  },
+  "gallery": [
+    {
+      "image": "static/images/dad_child_walking.png",
+      "caption": "Paso a paso, siempre guiando mi camino con amor."
+    },
+    {
+      "image": "static/images/dad_child_smiling.png",
+      "caption": "Las mejores risas y los momentos más felices son a tu lado."
+    }
+  ]
+}

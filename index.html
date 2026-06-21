@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Día del Padre, Papá!</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- Dynamic Config CSS Variables -->
+    <style>
+        :root {
+            --bg-color: {
+                    {
+                    config.theme.background_color
+                }
+            }
+
+            ;
+
+            --primary-color: {
+                    {
+                    config.theme.primary_color
+                }
+            }
+
+            ;
+
+            --secondary-color: {
+                    {
+                    config.theme.secondary_color
+                }
+            }
+
+            ;
+
+            --text-color: {
+                    {
+                    config.theme.text_color
+                }
+            }
+
+            ;
+
+            --card-bg: {
+                    {
+                    config.theme.card_background
+                }
+            }
+
+            ;
+
+            --font-title: {
+                    {
+                    config.theme.font_title
+                }
+            }
+
+            ;
+
+            --font-body: {
+                    {
+                    config.theme.font_body
+                }
+            }
+
+            ;
+
+            /* Gift Customization */
+            --box-color: {
+                    {
+                    config.gift.box_color
+                }
+            }
+
+            ;
+
+            --lid-color: {
+                    {
+                    config.gift.lid_color
+                }
+            }
+
+            ;
+
+            --ribbon-color: {
+                    {
+                    config.gift.ribbon_color
+                }
+            }
+
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="decorations">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+    </div>
+
+    <main class="main-container">
+        <!-- Header Homenaje -->
+        <header class="header-section">
+            <h1 class="main-title">¡Feliz Día del Padre, Papá!</h1>
+            <p class="subtitle">Un homenaje especial de parte de tu hijo.</p>
+            <div class="divider"></div>
+            <p class="intro-text">Querido Papá, en este día tan especial quiero recordarte lo mucho que significas para mi. Gracias por tu sabiduría, tu guía constante y tu amor infinito gracias por todo lo que has hecho por mi y por enseñarme todo lo que se.</p>
+        </header>
+
+        <!-- Regalo Interactivo -->
+        <section class="gift-section">
+            <h2 class="section-title">¿Qué habrá dentro del regalo?</h2>
+            <p class="section-desc">Presiona la caja de regalo para abrir la sorpresa que tengo para ti.</p>
+
+            <div class="gift-container" id="giftBoxContainer">
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-lid">
+                        <div class="ribbon-vertical-lid"></div>
+                        <div class="ribbon-horizontal-lid"></div>
+                        <div class="lid-top"></div>
+                    </div>
+                    <div class="gift-body">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje sorpresa (Oculto al inicio) -->
+            <div class="surprise-card" id="surpriseCard">
+                <div class="surprise-inner">
+                    <h3>De: Ethan</h3>
+                    <p class="surprise-message">¡Eres el mejor Papá del mundo entero!  Gracias por cada consejo, por tu paciencia infinita y por enseñarme todo lo que se. Que este día esté lleno de la misma felicidad que me das todos los días. ¡Te amo!</p>
+                    <span class="heart-icon">❤️</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Recuerdos -->
+        
+        <section class="gallery-section">
+            <h2 class="section-title">Nuestros Mejores Momentos</h2>
+            <p class="section-desc">Un recorrido por algunos de los momentos más lindos que hemos compartido.</p>
+
+            <div class="gallery-grid">
+                
+                <div class="polaroid-card">
+                    <div class="polaroid-img-wrapper">
+                        <img src="static/images/dad_child_walking.png" alt="Paso a paso, siempre guiando mi camino con amor." loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">
+                        <p>Paso a paso, siempre guiando mi camino con amor.</p>
+                    </div>
+                </div>
+                
+                <div class="polaroid-card">
+                    <div class="polaroid-img-wrapper">
+                        <img src="static/images/dad_child_smiling.png" alt="Las mejores risas y los momentos más felices son a tu lado." loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">
+                        <p>Las mejores risas y los momentos más felices son a tu lado.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <p>Hecho con amor y aprecio para el mejor papá del mundo • 2026</p>
+        </footer>
+    </main>
+
+    <!-- Canvas para Confeti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Scripts -->
+    <script src="static/script.js"></script>
+</body>
+
+</html>

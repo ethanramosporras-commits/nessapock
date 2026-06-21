@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.header.title }}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- Dynamic Config CSS Variables -->
+    <style>
+        :root {
+            --bg-color: {
+                    {
+                    config.theme.background_color
+                }
+            }
+
+            ;
+
+            --primary-color: {
+                    {
+                    config.theme.primary_color
+                }
+            }
+
+            ;
+
+            --secondary-color: {
+                    {
+                    config.theme.secondary_color
+                }
+            }
+
+            ;
+
+            --text-color: {
+                    {
+                    config.theme.text_color
+                }
+            }
+
+            ;
+
+            --card-bg: {
+                    {
+                    config.theme.card_background
+                }
+            }
+
+            ;
+
+            --font-title: {
+                    {
+                    config.theme.font_title
+                }
+            }
+
+            ;
+
+            --font-body: {
+                    {
+                    config.theme.font_body
+                }
+            }
+
+            ;
+
+            /* Gift Customization */
+            --box-color: {
+                    {
+                    config.gift.box_color
+                }
+            }
+
+            ;
+
+            --lid-color: {
+                    {
+                    config.gift.lid_color
+                }
+            }
+
+            ;
+
+            --ribbon-color: {
+                    {
+                    config.gift.ribbon_color
+                }
+            }
+
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="decorations">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+    </div>
+
+    <main class="main-container">
+        <!-- Header Homenaje -->
+        <header class="header-section">
+            <h1 class="main-title">{{ config.header.title }}</h1>
+            <p class="subtitle">{{ config.header.subtitle }}</p>
+            <div class="divider"></div>
+            <p class="intro-text">{{ config.header.intro }}</p>
+        </header>
+
+        <!-- Regalo Interactivo -->
+        <section class="gift-section">
+            <h2 class="section-title">¿Qué habrá dentro del regalo?</h2>
+            <p class="section-desc">Presiona la caja de regalo para abrir la sorpresa que tengo para ti.</p>
+
+            <div class="gift-container" id="giftBoxContainer">
+                <div class="gift-box" id="giftBox">
+                    <div class="gift-lid">
+                        <div class="ribbon-vertical-lid"></div>
+                        <div class="ribbon-horizontal-lid"></div>
+                        <div class="lid-top"></div>
+                    </div>
+                    <div class="gift-body">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mensaje sorpresa (Oculto al inicio) -->
+            <div class="surprise-card" id="surpriseCard">
+                <div class="surprise-inner">
+                    <h3>De: Ethan</h3>
+                    <p class="surprise-message">{{ config.gift.message }}</p>
+                    <span class="heart-icon">❤️</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Recuerdos -->
+        {% if config.gallery %}
+        <section class="gallery-section">
+            <h2 class="section-title">Nuestros Mejores Momentos</h2>
+            <p class="section-desc">Un recorrido por algunos de los momentos más lindos que hemos compartido.</p>
+
+            <div class="gallery-grid">
+                {% for item in config.gallery %}
+                <div class="polaroid-card">
+                    <div class="polaroid-img-wrapper">
+                        <img src="{{ item.image }}" alt="{{ item.caption }}" loading="lazy">
+                    </div>
+                    <div class="polaroid-caption">
+                        <p>{{ item.caption }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- Footer -->
+        <footer class="footer-section">
+            <p>Hecho con amor y aprecio para el mejor papá del mundo • 2026</p>
+        </footer>
+    </main>
+
+    <!-- Canvas para Confeti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Scripts -->
+    <script src="static/script.js"></script>
+</body>
+
+</html>
